@@ -2,17 +2,17 @@
 
 import useLocation from "@/hooks/useLocation";
 import { TourPackage } from "@/types/tourPackage";
-import { Link } from "lucide-react";
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const LocationDetails = ({ id }: { id: string }) => {
   const [location] = useLocation();
-  console.log(id,location);
-   const idData = location?.find((loc: TourPackage) => loc._id === id);
+  console.log(id, location);
+  const idData = location?.find((loc: TourPackage) => loc._id === id);
   console.log(idData);
   if (!idData) {
     return (
-      <div className="w-full bg-gray-100 p-4 min-h-screen">Loading...</div>
+      <div className="w-full flex justify-center items-center bg-gray-100 p-4 min-h-screen">Loading...</div>
     );
   }
 
@@ -40,10 +40,12 @@ const LocationDetails = ({ id }: { id: string }) => {
   } = idData;
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[500px] overflow-hidden rounded-b-2xl shadow-md">
-        <img
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[500px] overflow-hidden">
+        <Image
           src={tour_cover_photo}
           alt={tour_title}
+          width={1000}
+          height={500}
           className="object-cover w-full h-full"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
@@ -57,7 +59,9 @@ const LocationDetails = ({ id }: { id: string }) => {
       <div className="max-w-6xl mx-auto p-6 grid lg:grid-cols-3 gap-8 mt-10">
         {/* Left: Gallery and Quick Info */}
         <div className="space-y-6 lg:col-span-1">
-          <img
+          <Image
+            width={500}
+            height={300}
             src={hotel_image}
             alt={hotel_name}
             className="rounded-xl w-full shadow-md"
@@ -152,10 +156,11 @@ const LocationDetails = ({ id }: { id: string }) => {
           </div>
 
           <div className="text-center mt-10">
-            <Link href={`/book/${_id}`}>
-              <button className="btn px-10 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg rounded-xl shadow-md">
-                Book Now
-              </button>
+            <Link
+              href={`/book/${_id}`}
+              className=" btn border-none px-4 py-3 bg-sky-400 hover:bg-sky-600 text-black font-medium text-lg rounded-xl"
+            >
+              Book Now
             </Link>
           </div>
         </div>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import QueryProvider from "@/providers/QueryProvider"; // ✅ Client Component Import
 import AuthProvider from "@/providers/AuthProvider";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +19,13 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AuthProvider>
-          <QueryProvider>{children}</QueryProvider>
+          <QueryProvider>
+            <Navbar />
+            <main className="flex-grow container mx-auto px-4">
+              {children}
+            </main>
+            <Footer />
+          </QueryProvider>
         </AuthProvider>
       </body>
     </html>

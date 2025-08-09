@@ -1,52 +1,79 @@
 const Footer = () => {
   return (
-    <div className="bg-gray-200  rounded-none shadow-none mt-20 py-10 w-full">
-      <div className="w-full max-w-screen-xl mx-auto">
-        <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content grid-rows-2 p-10">
+    <footer className="bg-gray-200 mt-20 py-10 shadow-inner">
+      <div className="max-w-screen-xl mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-gray-700">
+          {/* Services */}
           <nav>
-            <h6 className="footer-title">Services</h6>
-            <a className="link link-hover">Branding</a>
-            <a className="link link-hover">Design</a>
-            <a className="link link-hover">Marketing</a>
-            <a className="link link-hover">Advertisement</a>
+            <h6 className="footer-title font-semibold mb-4 text-gray-900">Services</h6>
+            <ul className="space-y-2">
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Branding</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Design</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Marketing</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Advertisement</a></li>
+            </ul>
           </nav>
+
+          {/* Company */}
           <nav>
-            <h6 className="footer-title">Company</h6>
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
+            <h6 className="footer-title font-semibold mb-4 text-gray-900">Company</h6>
+            <ul className="space-y-2">
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">About us</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Contact</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Jobs</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Press kit</a></li>
+            </ul>
           </nav>
+
+          {/* Legal */}
           <nav>
-            <h6 className="footer-title">Legal</h6>
-            <a className="link link-hover">Terms of use</a>
-            <a className="link link-hover">Privacy policy</a>
-            <a className="link link-hover">Cookie policy</a>
+            <h6 className="footer-title font-semibold mb-4 text-gray-900">Legal</h6>
+            <ul className="space-y-2">
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Terms of use</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Privacy policy</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Cookie policy</a></li>
+            </ul>
           </nav>
+
+          {/* Social */}
           <nav>
-            <h6 className="footer-title">Social</h6>
-            <a className="link link-hover">Twitter</a>
-            <a className="link link-hover">Instagram</a>
-            <a className="link link-hover">Facebook</a>
-            <a className="link link-hover">GitHub</a>
+            <h6 className="footer-title font-semibold mb-4 text-gray-900">Social</h6>
+            <ul className="space-y-2">
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Twitter</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Instagram</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Facebook</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">GitHub</a></li>
+            </ul>
           </nav>
+
+          {/* Explore */}
           <nav>
-            <h6 className="footer-title">Explore</h6>
-            <a className="link link-hover">Features</a>
-            <a className="link link-hover">Enterprise</a>
-            <a className="link link-hover">Security</a>
-            <a className="link link-hover">Pricing</a>
+            <h6 className="footer-title font-semibold mb-4 text-gray-900">Explore</h6>
+            <ul className="space-y-2">
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Features</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Enterprise</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Security</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Pricing</a></li>
+            </ul>
           </nav>
+
+          {/* Apps */}
           <nav>
-            <h6 className="footer-title">Apps</h6>
-            <a className="link link-hover">Mac</a>
-            <a className="link link-hover">Windows</a>
-            <a className="link link-hover">iPhone</a>
-            <a className="link link-hover">Android</a>
+            <h6 className="footer-title font-semibold mb-4 text-gray-900">Apps</h6>
+            <ul className="space-y-2">
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Mac</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Windows</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">iPhone</a></li>
+              <li><a href="#" className="link link-hover hover:text-indigo-600 transition">Android</a></li>
+            </ul>
           </nav>
-        </footer>
+        </div>
+
+        <div className="text-center text-gray-500 text-sm mt-10">
+          &copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
+        </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

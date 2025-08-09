@@ -10,14 +10,14 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          href="/home"
+          href="/"
           className="text-base font-medium hover:text-yellow-500"
         >
           Home
         </Link>
       </li>
       <li>
-        <Link href="#" className="text-base font-medium hover:text-yellow-500">
+        <Link href="/location" className="text-base font-medium hover:text-yellow-500">
           Tours
         </Link>
       </li>
@@ -35,8 +35,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-white shadow-md sticky top-0 z-50">
-      <div className="navbar max-w-screen-xl mx-auto px-4 py-4">
+    <div className="bg-white sticky top-0 z-50">
+      <div className="navbar w-full mx-auto px-4 py-1">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

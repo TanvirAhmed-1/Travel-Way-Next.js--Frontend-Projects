@@ -1,8 +1,7 @@
 // src/context/AuthContext.tsx
 "use client";
 
-
-import React, { createContext, useEffect, useState, ReactNode } from 'react';
+import React, { createContext, useEffect, useState, ReactNode } from "react";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -12,7 +11,7 @@ import {
   signOut,
   User,
 } from "firebase/auth";
-import auth from '@/firebase/config';  // তোমার ফাইল পাথ ঠিক আছে কিনা চেক করো
+import auth from "@/firebase/config";
 
 interface AuthContextType {
   user: User | null;
@@ -74,9 +73,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 };
 
