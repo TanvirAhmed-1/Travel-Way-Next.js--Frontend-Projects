@@ -1,0 +1,22 @@
+export interface WishlistItem {
+  _id: string;
+  tour_title: string;
+  tour_location: string;
+  bus_name: string;
+  bus_contact: string;
+  bus_photo: string;
+  tour_cover_photo: string;
+  hotel_image: string;
+  hotel_description: string;
+  hotel_name: string;
+  total_days: string;         
+  tour_manager_contact: string;
+  tour_manager: string;
+  ratings: string;             
+  things_to_carry: string;
+  places: string;
+  guide_contact: string;
+  guide_name: string;
+  price: string;               
+  locationId: string;
+}

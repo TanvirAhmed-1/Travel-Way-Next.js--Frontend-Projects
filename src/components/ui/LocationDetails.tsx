@@ -1,7 +1,7 @@
 "use client";
 
 import useLocation from "@/hooks/useLocation";
-import { TourPackage } from "@/types/tourPackage";
+import { TourPackage } from "@/types/TourPackage";
 import Image from "next/image";
 import Link from "next/link";
 
