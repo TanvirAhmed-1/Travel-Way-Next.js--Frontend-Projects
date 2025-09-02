@@ -1,4 +1,11 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Guides List | Travel Way",
+  description:
+    "Browse all available travel guides with details like experience, languages, and availability. Manage and update guides easily.",
+  keywords: ["travel guides", "tour guide", "available guides", "book guides"],
+};
 
 import AddGuides from "@/components/ui/dashboard/admin/Guides/AddGuides";
 import GuidesTable from "@/components/ui/dashboard/admin/Guides/GuidesTable";
@@ -17,7 +24,7 @@ const page = () => {
       </div>
 
       {/* Guides Table */}
-      <div className="bg-white rounded-2xl shadow-lg p-4">
+      <div className="bg-white rounded-2xl">
         <GuidesTable />
       </div>
     </div>

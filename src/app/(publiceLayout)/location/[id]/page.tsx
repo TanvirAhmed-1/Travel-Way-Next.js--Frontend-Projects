@@ -1,4 +1,4 @@
-import LocationDetails from "@/components/ui/LocationDetails";
+import LocationDetails from "@/components/ui/publice/LocationDetails";
 
 const page = ({ params }: { params: { id: string } }) => {
   console.log(params.id);

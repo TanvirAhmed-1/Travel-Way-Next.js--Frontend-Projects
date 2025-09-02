@@ -8,20 +8,20 @@ export const DashboardLinks = admin
   ? [
       {
         title: "Dashboard",
-        route: "/",
+        route: "/dashboard",
         hasChildren: false,
         icon: <FaTachometerAlt className="text-teal-600" />,
       },
       {
-        title: "Data",
-        route: null,
+        title: "All-location",
+        route: "/dashboard/all-location",
         hasChildren: false,
         icon: <FaGear className="text-teal-600" />,
       },
       {
-        title: "Title2",
-        route: null,
-        hasChildren: true,
+        title: "Guides",
+        route: "/dashboard/guides",
+        hasChildren: false,
         icon: <FaFile className="text-teal-600" />,
       },
       {
@@ -40,6 +40,12 @@ export const DashboardLinks = admin
           { title: "Two", route: "#" },
           { title: "three", route: "#" },
         ],
+      },
+      {
+        title: "Home",
+        route: "/",
+        hasChildren: false,
+        icon: <FaTachometerAlt className="text-teal-600" />,
       },
     ]
   : // used section
@@ -51,8 +57,8 @@ export const DashboardLinks = admin
         icon: <FaTachometerAlt className="text-teal-600" />,
       },
       {
-        title: "Data",
-        route: null,
+        title: "All-location",
+        route: "/dashboard/all-location",
         hasChildren: false,
         icon: <FaGear className="text-teal-600" />,
       },
@@ -73,10 +79,5 @@ export const DashboardLinks = admin
         route: null,
         hasChildren: true,
         icon: <FaUsers className="text-teal-600" size={16} />,
-        subRoutes: [
-          { title: "one", route: "#" },
-          { title: "Two", route: "#" },
-          { title: "three", route: "#" },
-        ],
       },
     ];

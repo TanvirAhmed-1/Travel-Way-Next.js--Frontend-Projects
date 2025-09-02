@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "All Location | Travel Way",
+  description:
+    "Browse all available travel guides with details like experience, languages, and availability. Manage and update guides easily.",
+  keywords: ["travel guides", "tour guide", "available guides", "book guides"],
+};
+
 import { AddLocationModal } from "@/components/ui/dashboard/admin/all-location/AddLocationModal";
 import AllLocationTable from "@/components/ui/dashboard/admin/all-location/AllLocationTable";
 

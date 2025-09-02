@@ -8,11 +8,23 @@ import { GuideType } from "@/types/GuideType";
 import EditGuides from "./EditGuides";
 
 const GuidesTable: React.FC = () => {
-  const [guides, refetch] = useGuideHook();
+  const [guides, refetch, isLoading] = useGuideHook();
   const axiosSecure = useAxiosSecure();
 
   const handleDelete = async (id: string): Promise<void> => {
     try {
+      const confirm = await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      });
+
+      if (!confirm.isConfirmed) return;
+
       const res = await axiosSecure.delete<{ deletedCount: number }>(
         `/guides/${id}`
       );
@@ -22,7 +34,7 @@ const GuidesTable: React.FC = () => {
         Swal.fire({
           icon: "success",
           title: "Guide Deleted!",
-          timer: 100,
+          timer: 1200,
           showConfirmButton: false,
         });
       }
@@ -36,9 +48,13 @@ const GuidesTable: React.FC = () => {
     }
   };
 
+  if (isLoading) {
+    return <p className="text-center text-gray-500 py-10">Loading guides...</p>;
+  }
+
   return (
-    <div className="overflow-x-auto rounded-lg shadow bg-white">
-      <table className="table w-full text-sm">
+    <div className="overflow-x-auto rounded-lg  bg-white">
+      <table className="table  w-full text-sm">
         <thead className="bg-blue-100 text-gray-800">
           <tr>
             <th>#</th>
@@ -56,7 +72,7 @@ const GuidesTable: React.FC = () => {
         </thead>
         <tbody>
           {guides?.map((guide: GuideType, index: number) => (
-            <tr key={guide._id} className="hover:bg-blue-50 transition">
+            <tr key={guide._id} className="hover:bg-blue-50 ">
               <td>{index + 1}</td>
               <td>
                 <img
@@ -81,8 +97,7 @@ const GuidesTable: React.FC = () => {
               </td>
               <td>{guide.languages}</td>
               <td>{guide.availabilityType}</td>
-              <td>{guide.experience} yrs</td>{" "}
-              {/* ✅ এখানে Experience দেখানো হবে */}
+              <td>{guide.experience} yrs</td>
               <td>
                 <EditGuides guide={guide} />
               </td>
@@ -101,7 +116,7 @@ const GuidesTable: React.FC = () => {
       </table>
 
       {guides?.length === 0 && (
-        <p className="text-center text-red-500 mt-10">No guides found.</p>
+        <p className="text-center text-red-500 py-10">No guides found.</p>
       )}
     </div>
   );

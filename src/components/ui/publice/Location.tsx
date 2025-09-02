@@ -2,8 +2,8 @@
 
 import useLocation from "@/hooks/useLocation";
 import React from "react";
-import LocationCard from "@/components/ui/LocationCard";
-import { TourPackage } from "../../types/TourPackage";
+import LocationCard from "@/components/ui/publice/LocationCard";
+import { TourPackage } from "@/types/TourPackage";
 
 const page = () => {
   const [location, refetch] = useLocation();

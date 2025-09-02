@@ -1,9 +1,9 @@
 export const metadata = {
-  title: "WishList | Traval way",
-  description: "Traval way to find best Hotals ",
+  title: "WishList | Travel way",
+  description: "Travel way to find best Hotals ",
 };
 
-import Wishlist from "@/components/ui/WitshList";
+import Wishlist from "@/components/ui/publice/WitshList";
 
 const Page = () => {
   return (
