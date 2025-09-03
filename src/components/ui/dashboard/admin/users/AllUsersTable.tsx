@@ -1,3 +1,5 @@
+"use client";
+
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 import useAxiosSecure from "@/lib/AxiosSecure";
@@ -82,16 +84,16 @@ const AllUsersTable = () => {
 
   return (
     <div>
-      <div className="pt-14 pb-6 text-center">
-        <h1 className="text-2xl font-semibold inline-block border-t-2 border-b-2 border-green-600 py-1 px-4">
-          Manage Users
+      <div className=" pb-6 ">
+        <h1 className="text-2xl font-semibold  text-start border-green-600 py-1 px-4">
+          Manage All Users
         </h1>
       </div>
 
       <div className="overflow-x-auto">
-        <table className="table table-zebra">
+        <table className="table">
           {/* head */}
-          <thead className="text-xl font-semibold bg-sky-400 text-black">
+          <thead className="text-sm font-medium *:text-center  bg-sky-400 rounded-xl text-black">
             <tr>
               <th>#</th>
               <th>Name</th>
@@ -104,7 +106,10 @@ const AllUsersTable = () => {
           <tbody>
             {/* row 1 */}
             {user?.map((items: usersData, index: number) => (
-              <tr key={items._id} className=" text-xl text-black bg-white">
+              <tr
+                key={items._id}
+                className=" text-sm *:text-center text-black bg-white"
+              >
                 <td>{index + 1}</td>
                 <td>{items.name}</td>
                 <td>{items.email}</td>
@@ -121,21 +126,21 @@ const AllUsersTable = () => {
                   {items?.role === "Admin" ? (
                     <button
                       onClick={() => handleCreateUser(items)}
-                      className="btn bg-green-300"
+                      className=" py-1 px-2 text-[12px] rounded-xl bg-teal-500 hover:bg-teal-600 text-slate-50"
                     >
                       Create User
                     </button>
                   ) : (
                     <button
                       onClick={() => handleCreate(items)}
-                      className="btn bg-green-300"
+                      className="py-1 px-2 text-[12px] bg-[#67C090] hover:bg-[#4ab47b]"
                     >
                       Create Admin
                     </button>
                   )}
                 </td>
                 <td onClick={() => handleDelete(items._id)}>
-                  <MdDeleteForever className="text-3xl text-red-500 hover:text-red-600" />
+                  <MdDeleteForever className="text-2xl ml-14 text-red-500  hover:text-red-600" />
                 </td>
               </tr>
             ))}

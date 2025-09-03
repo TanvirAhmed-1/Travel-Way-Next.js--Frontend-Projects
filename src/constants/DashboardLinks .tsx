@@ -25,21 +25,10 @@ export const DashboardLinks = admin
         icon: <FaFile className="text-teal-600" />,
       },
       {
-        title: "Title3",
-        route: null,
-        hasChildren: true,
+        title: "User",
+        route: "/dashboard/user",
+        hasChildren: false,
         icon: <IoDocumentsSharp className="text-teal-600" size={16} />,
-      },
-      {
-        title: "Title4",
-        route: null,
-        hasChildren: true,
-        icon: <FaUsers className="text-teal-600" size={16} />,
-        subRoutes: [
-          { title: "one", route: "#" },
-          { title: "Two", route: "#" },
-          { title: "three", route: "#" },
-        ],
       },
       {
         title: "Home",
@@ -51,7 +40,7 @@ export const DashboardLinks = admin
   : // used section
     [
       {
-        title: "Home",
+        title: "Dashboard",
         route: "/",
         hasChildren: false,
         icon: <FaTachometerAlt className="text-teal-600" />,

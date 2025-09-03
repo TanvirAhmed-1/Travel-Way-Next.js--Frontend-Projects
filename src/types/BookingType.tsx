@@ -9,10 +9,10 @@ export type BookingType = {
   hotel_image: string;
   hotel_description: string;
   hotel_name: string;
-  total_days: string; // could be number if you parse it
+  total_days: string;
   tour_manager_contact: string;
   tour_manager: string;
-  ratings: string; // could be number if you parse it
+  ratings: string; 
   things_to_carry: string;
   description: string;
   places: string;
@@ -22,5 +22,5 @@ export type BookingType = {
   lastName: string;
   phone: string;
   email: string;
-  booking_states: string; // e.g., "Accept", "Pending"
+  booking_states: string;
 };

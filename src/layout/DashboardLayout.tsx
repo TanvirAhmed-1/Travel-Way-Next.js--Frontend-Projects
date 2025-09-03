@@ -3,7 +3,7 @@
 import { DashboardLinks } from "@/constants/DashboardLinks ";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   FaChevronDown,
   FaChevronUp,
@@ -13,7 +13,6 @@ import {
   FaSearch,
   FaBell,
 } from "react-icons/fa";
-import { RiArrowDropRightLine } from "react-icons/ri";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -23,27 +22,6 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
 
   // Section toggle state
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
-
-  // Auto-open sections based on current path
-  useEffect(() => {
-    const newOpenSections: Record<string, boolean> = {};
-
-    DashboardLinks.forEach((data) => {
-      if (data.hasChildren) {
-        const isAnySubRouteActive = data.subRoutes?.some((sub) =>
-          pathname?.startsWith(sub.route)
-        );
-        newOpenSections[data.title] = !!isAnySubRouteActive;
-      }
-    });
-
-    setOpenSections(newOpenSections);
-  }, [pathname]);
-
-  // Close sidebar when route changes on mobile
-  useEffect(() => {
-    setSidebarOpen(false);
-  }, [pathname]);
 
   const toggleSection = (title: string) => {
     setOpenSections((prev) => ({ ...prev, [title]: !prev[title] }));
@@ -123,26 +101,6 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
                         <FaChevronDown className="text-xs sm:text-sm text-emerald-200 flex-shrink-0" />
                       )}
                     </button>
-
-                    {openSections[data.title] && (
-                      <div className="ml-4 sm:ml-6 mt-2 space-y-1 border-l-2 border-emerald-600/30 pl-3 sm:pl-4">
-                        {data.subRoutes?.map((sub) => (
-                          <Link
-                            href={sub.route}
-                            key={sub.title}
-                            className={`text-xs sm:text-sm font-medium px-2.5 sm:px-3 py-2 rounded-lg flex items-center gap-2 transition-all duration-200
-                              ${
-                                isActiveRoute(sub.route)
-                                  ? "bg-amber-500 text-white shadow-lg"
-                                  : "text-emerald-100 hover:bg-white/10 hover:text-white"
-                              }`}
-                          >
-                            <RiArrowDropRightLine className="text-base sm:text-lg flex-shrink-0" />
-                            <span className="truncate">{sub.title}</span>
-                          </Link>
-                        ))}
-                      </div>
-                    )}
                   </>
                 ) : (
                   <Link
