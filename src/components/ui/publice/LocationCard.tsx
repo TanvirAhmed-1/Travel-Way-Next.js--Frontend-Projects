@@ -15,14 +15,21 @@ import {
   FaRegHeart,
 } from "react-icons/fa";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const LocationCard = ({ loc }: { loc: TourPackage }) => {
   const [witchlist, refetch] = useWitchList();
   const axiosPublic = AxiosPublic();
   const { user } = useAuth();
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const router = useRouter();
 
   const handleWitchlist = async (data: TourPackage) => {
+    if (!user) {
+      router.push("/login");
+      return;
+    }
+
     const { _id, description, ...data2 } = data;
 
     const wishData = {
@@ -37,7 +44,7 @@ const LocationCard = ({ loc }: { loc: TourPackage }) => {
       if (res.data.insertedId) {
         setIsWishlisted(true);
         Swal.fire({
-          position: "top-center",
+          position: "top",
           icon: "success",
           title: "Added to wishlist",
           showConfirmButton: false,

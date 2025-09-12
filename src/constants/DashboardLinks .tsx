@@ -1,8 +1,13 @@
-import { FaFile, FaTachometerAlt, FaUsers } from "react-icons/fa";
-import { FaGear } from "react-icons/fa6";
-import { IoDocumentsSharp } from "react-icons/io5";
+import {
+  FaFile,
+  FaTachometerAlt,
+  FaUsers,
+  FaMap,
+  FaHome,
+} from "react-icons/fa";
 
-const admin = true;
+
+const admin = false;
 
 export const DashboardLinks = admin
   ? [
@@ -14,59 +19,47 @@ export const DashboardLinks = admin
       },
       {
         title: "All-location",
-        route: "/dashboard/all-location",
+        route: "/dashboard/admin/all-location",
         hasChildren: false,
-        icon: <FaGear className="text-teal-600" />,
+        icon: <FaMap className="text-teal-600" />,
       },
       {
         title: "Guides",
-        route: "/dashboard/guides",
+        route: "/dashboard/admin/guides",
         hasChildren: false,
         icon: <FaFile className="text-teal-600" />,
       },
       {
         title: "User",
-        route: "/dashboard/user",
+        route: "/dashboard/admin/user",
         hasChildren: false,
-        icon: <IoDocumentsSharp className="text-teal-600" size={16} />,
+        icon: <FaUsers className="text-teal-600" size={16} />,
       },
       {
         title: "Home",
         route: "/",
         hasChildren: false,
-        icon: <FaTachometerAlt className="text-teal-600" />,
+        icon: <FaHome className="text-teal-600" />,
       },
     ]
   : // used section
     [
       {
         title: "Dashboard",
-        route: "/",
+        route: "/dashboard/user/home",
         hasChildren: false,
         icon: <FaTachometerAlt className="text-teal-600" />,
       },
       {
         title: "All-location",
-        route: "/dashboard/all-location",
+        route: "/dashboard/user/booking",
         hasChildren: false,
-        icon: <FaGear className="text-teal-600" />,
+        icon: <FaMap className="text-teal-600" />,
       },
       {
-        title: "Title2",
-        route: null,
-        hasChildren: true,
-        icon: <FaFile className="text-teal-600" />,
-      },
-      {
-        title: "Title3",
-        route: null,
-        hasChildren: true,
-        icon: <IoDocumentsSharp className="text-teal-600" size={16} />,
-      },
-      {
-        title: "Title4",
-        route: null,
-        hasChildren: true,
-        icon: <FaUsers className="text-teal-600" size={16} />,
+        title: "Home",
+        route: "/",
+        hasChildren: false,
+        icon: <FaHome className="text-teal-600" />,
       },
     ];

@@ -7,9 +7,11 @@ import Swal from "sweetalert2";
 import useWitchList from "@/hooks/useWitchList";
 import AxiosPublic from "@/lib/AxiosPublic";
 import { WishlistItem } from "@/types/WishlistItem";
+import { useAuth } from "@/hooks/useAuth";
 
 const Wishlist = () => {
   const [wish, refetch] = useWitchList();
+   const { user } = useAuth();
   const axiosPublic = AxiosPublic();
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
 

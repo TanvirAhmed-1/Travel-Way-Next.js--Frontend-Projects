@@ -3,7 +3,7 @@ export const metadata = {
   description: "Travel way to find best Hotals ",
 };
 
-import Hotels from "@/components/ui/hotels/Hotels";
+import Hotels from "@/components/ui/publice/hotels/Hotels";
 
 const page = () => {
   return (

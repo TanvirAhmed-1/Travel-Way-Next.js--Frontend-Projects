@@ -7,11 +7,11 @@ import React, { useState } from "react";
 import {
   FaChevronDown,
   FaChevronUp,
-  FaMosque,
   FaBars,
   FaTimes,
   FaSearch,
   FaBell,
+  FaMapMarkedAlt,
 } from "react-icons/fa";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -50,7 +50,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
         className={`
         fixed lg:static inset-y-0 left-0 z-50
         w-72 sm:w-80 lg:w-72 xl:w-80
-        bg-gradient-to-b from-emerald-800 via-emerald-700 to-emerald-900 
+        bg-[#91C8E4]
         shadow-2xl transform transition-transform duration-300 ease-in-out
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
       `}
@@ -62,21 +62,22 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
         >
           <FaTimes size={20} />
         </button>
-
-        <div className="p-4 sm:p-6 h-full overflow-y-auto">
-          {/* Header */}
-          <div className="flex items-center justify-center mb-6 sm:mb-8 p-3 sm:p-4 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/20">
-            <FaMosque className="text-2xl sm:text-3xl text-amber-300 mr-2 sm:mr-3 flex-shrink-0" />
+        {/* Header */}
+        <div className="p-4 sm:p-6 h-full">
+          <div className="flex gap-y-4 gap-x-6 mb-10 ">
+            <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <FaMapMarkedAlt className="text-white text-4xl" />
+            </div>
             <div className="min-w-0">
-              <h1 className="text-lg sm:text-lg font-semibold text-white truncate">
+              <h1 className="text-6xl sm:text-lg font-semibold text-white truncate">
                 Travel Way
               </h1>
-              <p className="text-emerald-200 text-xs sm:text-sm truncate">
+              <p className="text-emerald-200 text-xs sm:text-sm truncate mt-2">
                 Admin Dashboard
               </p>
             </div>
           </div>
-
+          <div className="divider"></div>
           {/* Navigation Menu */}
           <nav className="space-y-1 sm:space-y-2">
             {DashboardLinks?.map((data, index) => (
@@ -108,8 +109,8 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
                     className={`flex items-center gap-2 sm:gap-3 p-2.5 sm:p-3 rounded-lg sm:rounded-xl transition-all duration-300 ease-in-out group
                       ${
                         isActiveRoute(data.route || "/")
-                          ? "bg-amber-500 text-white shadow-lg"
-                          : "text-white hover:bg-white/10 hover:scale-105"
+                          ? "bg-teal-400 text-white shadow-lg"
+                          : "text-white hover:bg-teal-300/50 hover:scale-105"
                       }`}
                   >
                     <span className="text-amber-300 text-base sm:text-lg group-hover:scale-110 transition-transform flex-shrink-0">

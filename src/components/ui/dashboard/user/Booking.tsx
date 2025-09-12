@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "@/lib/AxiosSecure";
 
 // Booking type
-interface BookingType {
+type BookingType = {
   _id: string;
   tour_cover_photo: string;
   tour_title: string;
@@ -16,7 +16,7 @@ interface BookingType {
   booking_states: string;
   bus_name: string;
   bus_contact: string;
-}
+};
 
 const Booking = () => {
   const axiosSecure = useAxiosSecure();

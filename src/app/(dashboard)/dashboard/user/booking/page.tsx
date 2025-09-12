@@ -1,9 +1,9 @@
-import Register from "@/components/ui/Register";
+import Booking from "@/components/ui/dashboard/user/Booking";
 
 const page = () => {
   return (
     <div>
-      <Register />
+      <Booking />
     </div>
   );
 };
