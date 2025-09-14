@@ -6,10 +6,14 @@ import {
   FaHome,
 } from "react-icons/fa";
 
+// ধরো তুমি cookie বা user object থেকে role আনছো
+// উদাহরণ: const userRole = "Admin" বা "User"
+const userRole = typeof window !== "undefined" ? localStorage.getItem("role") : null;
 
-const admin = false;
+// boolean চেক
+const isAdmin = userRole === "Admin";
 
-export const DashboardLinks = admin
+export const DashboardLinks = isAdmin
   ? [
       {
         title: "Dashboard",
@@ -42,8 +46,7 @@ export const DashboardLinks = admin
         icon: <FaHome className="text-teal-600" />,
       },
     ]
-  : // used section
-    [
+  : [
       {
         title: "Dashboard",
         route: "/dashboard/user/home",
