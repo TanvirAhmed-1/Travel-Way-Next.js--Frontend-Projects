@@ -12,7 +12,9 @@ const LocationDetails = ({ id }: { id: string }) => {
   console.log(idData);
   if (!idData) {
     return (
-      <div className="w-full flex justify-center items-center bg-gray-100 p-4 min-h-screen">Loading...</div>
+      <div className="w-full flex justify-center items-center bg-gray-100 p-4 min-h-screen">
+        Loading...
+      </div>
     );
   }
 
@@ -157,7 +159,7 @@ const LocationDetails = ({ id }: { id: string }) => {
 
           <div className="text-center mt-10">
             <Link
-              href={`/book/${_id}`}
+              href={`/booking/${_id}`}
               className=" btn border-none px-4 py-3 bg-sky-400 hover:bg-sky-600 text-black font-medium text-lg rounded-xl"
             >
               Book Now

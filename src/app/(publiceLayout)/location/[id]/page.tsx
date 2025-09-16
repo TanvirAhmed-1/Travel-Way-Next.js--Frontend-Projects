@@ -1,13 +1,14 @@
+"use client";
+
+import React from "react";
 import LocationDetails from "@/components/ui/publice/LocationDetails";
 
-const page = ({ params }: { params: { id: string } }) => {
-  console.log(params.id);
+export default function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = React.use(params);
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <LocationDetails id={params.id} />
+      <LocationDetails id={id} />
     </div>
   );
-};
-
-export default page;
+}
