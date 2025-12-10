@@ -1,11 +1,10 @@
-import axios from 'axios';
-
+import axios from "axios";
 
 const AxiosSecure = () => {
- const instance = axios.create({
-  baseURL: 'http://localhost:5000',
-});
-  return instance
+  const instance = axios.create({
+    baseURL: "https://travel-way-server-xi.vercel.app",
+  });
+  return instance;
 };
 
 export default AxiosSecure;

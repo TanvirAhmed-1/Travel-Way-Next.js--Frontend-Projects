@@ -15,7 +15,7 @@ const AllUsersTable = () => {
   const AxiosSecure = useAxiosSecure();
   const [user, refetch] = userTanstackQuery();
   const handleDelete = (_id: string) => {
-    fetch(`http://localhost:5000/users/${_id}`, {
+    fetch(`https://travel-way-server-xi.vercel.app/users/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

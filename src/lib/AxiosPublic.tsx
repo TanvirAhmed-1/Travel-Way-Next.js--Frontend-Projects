@@ -2,7 +2,7 @@ import axios from "axios";
 
 const AxiosPublic = () => {
   const instance = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://travel-way-server-xi.vercel.app",
     withCredentials: true,
   });
   return instance;
